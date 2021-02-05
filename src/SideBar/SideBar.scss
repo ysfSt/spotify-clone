@@ -1,0 +1,19 @@
+.sidebar {
+  background-color: #111113;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  color: white;
+  min-width: 230px;
+  flex: 0.2;
+
+  .sidebar__logo {
+    width: 50%;
+    object-fit: contain;
+    margin: 30px;
+  }
+  a {
+    color: white;
+  }
+}

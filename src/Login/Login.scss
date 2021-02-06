@@ -1,0 +1,17 @@
+.login {
+  display: grid;
+  place-items: center;
+  background-color: black;
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #1db954;
+    color: #fff;
+    font-weight: 600;
+  }
+}

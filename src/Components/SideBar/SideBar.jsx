@@ -6,6 +6,7 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import SideBarOption from "./SideBarOption/SideBarOption";
 
 const SideBar = () => {
+  console.log(HomeIcon);
   return (
     <div className="sidebar">
       <img
@@ -13,11 +14,9 @@ const SideBar = () => {
         alt=""
         className="sidebar__logo"
       />
-      <ul className="items">
-        <SideBarOption title="Home" icon={HomeIcon} />
-        <SideBarOption title="Search" icon={SearchIcon} />
-        <SideBarOption title="Library" icon={LibraryMusicIcon} />
-      </ul>
+        <SideBarOption title="Home" Icon={HomeIcon} />
+        <SideBarOption title="Search" Icon={SearchIcon} />
+        <SideBarOption title="Your Library" Icon={LibraryMusicIcon} />
     </div>
   );
 };

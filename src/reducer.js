@@ -3,7 +3,7 @@ export const initialState = {
   playlists: [],
   playing: false,
   items: null,
-  token: REACT_APP_TOKEN_KEY,
+  token: process.env.REACT_APP_TOKEN_KEY,
 };
 
 const reducer = (state, action) => {

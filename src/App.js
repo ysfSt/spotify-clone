@@ -5,13 +5,14 @@ import Login from "./Components/Login/Login";
 import PLayer from "./Components/Player/Player";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "./StateProvider.js";
 
 const spotify = new SpotifyWebApi();
 console.log(spotify);
 
 function App() {
   //const [token, setToken] = useState(null);
+  console.log(useStateValue());
   const [{ user, token }, dispatch] = useStateValue();
   console.log(user, token);
 

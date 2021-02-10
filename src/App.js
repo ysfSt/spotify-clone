@@ -12,7 +12,6 @@ console.log(spotify);
 
 function App() {
   //const [token, setToken] = useState(null);
-  console.log(useStateValue());
   const [{ user, token }, dispatch] = useStateValue();
   console.log(user, token);
 
@@ -21,7 +20,9 @@ function App() {
     window.location.hash = "";
 
     const _token = hash.access_token;
+    console.log(_token);
     if (_token) {
+      console.log("inside _token ");
       dispatch({
         type: "SET_TOKEN",
         token: _token,
@@ -33,13 +34,19 @@ function App() {
           user, // means user : user
         });
       });
+      spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists);
+        return dispatch({
+          type: "SET_PLAYLISTS",
+          playlists,
+        });
+      });
     }
   }, []);
 
   return (
     <div className="App">
       {token ? <PLayer spotify={spotify} /> : <Login />}
-      <SideBar />
     </div>
   );
 }

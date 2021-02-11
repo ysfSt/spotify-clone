@@ -7,4 +7,35 @@
   height: 65px;
   background-color: #282828;
   padding: 20px;
+
+  .footer__left {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    .footer__albumcover {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+      margin-right: 30px;
+    }
+  }
+
+  .footer__center {
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 0 100px;
+    min-width: 300px;
+  }
+  .footer__right {
+    flex: 0.3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }

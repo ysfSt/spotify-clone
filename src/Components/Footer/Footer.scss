@@ -13,12 +13,22 @@
     display: flex;
     align-items: center;
     color: white;
+    width: 300px;
 
     .footer__albumcover {
       height: 60px;
       width: 60px;
       object-fit: contain;
       margin-right: 30px;
+    }
+
+    .footer__songInfo {
+      h4 {
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 12px;
+      }
     }
   }
 
@@ -30,6 +40,10 @@
     color: white;
     padding: 0 100px;
     min-width: 300px;
+
+    .footer__green {
+      color: #1ed15e;
+    }
   }
   .footer__right {
     flex: 0.3;
@@ -37,5 +51,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    * .MuiSlider-root {
+      color: green;
+    }
   }
+}
+
+.footer__icon:hover {
+  transform: scale(1.2) !important;
+  transition: transform 0.2s ease-in-out;
 }

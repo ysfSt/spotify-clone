@@ -15,18 +15,19 @@ const Footer = () => {
   return <div className="footer">
     <div className="footer__left">
       {/* Album and song details */}
-      <img  className='footer__albumcover' src="https://upload.wikimedia.org/wikipedia/en/4/4d/TwilightCoverDrive.jpg" alt=""/>
+      <img  className="footer__albumcover" src="https://upload.wikimedia.org/wikipedia/en/4/4d/TwilightCoverDrive.jpg" alt=""/>
       <div className="footer__songInfo">
         <h4>Song Name</h4>
+        <p>Artist</p>
       </div>
     </div>
     <div className="footer__center">
       {/* Player Controls */}
-      <ShuffleRoundedIcon/>
+      <ShuffleRoundedIcon className='footer__icon footer__green'/>
       <SkipPreviousRoundedIcon className='footer__icon'/>
-      <PlayCircleOutlineIcon fontSize='large'/>
+      <PlayCircleOutlineIcon className='footer__icon' fontSize='large'/>
       <SkipNextRoundedIcon className='footer__icon'/>
-      <RepeatRoundedIcon/>
+      <RepeatRoundedIcon className='footer__icon footer__green'/>
     </div>
     <div className="footer__right">
       {/* Volume Controls */}

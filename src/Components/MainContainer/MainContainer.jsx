@@ -1,10 +1,11 @@
 import React from "react";
 import "./MainContainer.scss";
+import Header from './Header/Header';
 
-const MainContainer = () => {
+const MainContainer = ({spotify}) => {
   return (
     <div className="mainContainer">
-      <h1>Main Container</h1>
+      <Header/>
     </div>
   );
 };

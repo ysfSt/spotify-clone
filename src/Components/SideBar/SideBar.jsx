@@ -8,7 +8,6 @@ import { useStateValue } from "../../StateProvider";
 
 const SideBar = () => {
   const [{playlists},disptch] = useStateValue();
-  console.log(playlists);
   return (
     <div className="sidebar">
       <img
@@ -22,7 +21,7 @@ const SideBar = () => {
         <br/>
         <strong className='sidebar__title'>PLAYLISTS</strong>
         <hr/>
-        {playlists?.items?.map(playlist => <SideBarOption title={playlist.name}/>)}
+        {playlists?.map(playlist => <SideBarOption title={playlist.name}/>)}
     </div>
   );
 };

@@ -34,11 +34,19 @@ function App() {
           user, // means user : user
         });
       });
-      spotify.getUserPlaylists().then((playlists) => {
-        console.log(playlists);
+      spotify.getUserPlaylists().then((data) => {
+        console.log(data);
         return dispatch({
           type: "SET_PLAYLISTS",
-          playlists,
+          playlists: data.items,
+        });
+      });
+
+      spotify.getPlaylistTracks("5CLCReqqp7OTLDMcvB1oLw").then((data) => {
+        console.log(data);
+        dispatch({
+          type: "SET_PLAYLISTS_TRACKS",
+          playlistsTracks: data.items,
         });
       });
     }

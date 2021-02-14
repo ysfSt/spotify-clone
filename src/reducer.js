@@ -3,7 +3,7 @@ export const initialState = {
   playlists: [],
   playing: false,
   items: null,
-  playlistsTracks: [],
+  tracks: [],
   // token: process.env.REACT_APP_TOKEN_KEY,
   token: null,
 };
@@ -30,10 +30,10 @@ const reducer = (state, action) => {
         playlists: action.playlists,
       };
       break;
-    case "SET_PLAYLISTS_TRACKS":
+    case "SET_TRACKS":
       return {
         ...state,
-        playlistsTracks: action.playlistsTracks,
+        tracks: action.tracks,
       };
       break;
     default:

@@ -1,0 +1,18 @@
+.track {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+
+  .track__left {
+    display: flex;
+    flex: 0.9;
+
+    div:not(:first-child) {
+      flex: 1;
+    }
+    div:first-child {
+      width: 40px;
+    }
+  }
+}

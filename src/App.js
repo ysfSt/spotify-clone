@@ -45,8 +45,8 @@ function App() {
       spotify.getPlaylistTracks("5CLCReqqp7OTLDMcvB1oLw").then((data) => {
         console.log(data);
         dispatch({
-          type: "SET_PLAYLISTS_TRACKS",
-          playlistsTracks: data.items,
+          type: "SET_TRACKS",
+          tracks: data.items,
         });
       });
     }

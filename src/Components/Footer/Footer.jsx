@@ -9,9 +9,16 @@ import PlaylistPlayRoundedIcon from '@material-ui/icons/PlaylistPlayRounded';
 import {Grid, Slider, slider} from '@material-ui/core';
 import VolumeUpRoundedIcon from '@material-ui/icons/VolumeUpRounded';
 import VolumeDownRoundedIcon from '@material-ui/icons/VolumeDownRounded';
+import {useStateValue} from '../../StateProvider';
 
 
 const Footer = () => {
+
+const [{playlists, playlistId},dispatch] = useStateValue();
+const playlistIndex = playlists.findIndex((item)=> item.id === playlistId);
+const playlistClicked = playlists[playlistIndex];
+
+
   return <div className="footer">
     <div className="footer__left">
       {/* Album and song details */}

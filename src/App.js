@@ -12,8 +12,8 @@ console.log(spotify);
 
 function App() {
   //const [token, setToken] = useState(null);
-  const [{ user, token }, dispatch] = useStateValue();
-  console.log(user, token);
+  const [{ user, token, playlistId }, dispatch] = useStateValue();
+  console.log(user, token, playlistId);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -36,21 +36,23 @@ function App() {
       });
       spotify.getUserPlaylists().then((data) => {
         console.log(data);
-        return dispatch({
+        dispatch({
           type: "SET_PLAYLISTS",
           playlists: data.items,
         });
       });
-
-      spotify.getPlaylistTracks("5CLCReqqp7OTLDMcvB1oLw").then((data) => {
-        console.log(data);
-        dispatch({
-          type: "SET_TRACKS",
-          tracks: data.items,
-        });
-      });
     }
   }, []);
+
+  useEffect(() => {
+    spotify.getPlaylistTracks(playlistId).then((data) => {
+      console.log(data);
+      dispatch({
+        type: "SET_TRACKS",
+        tracks: data.items,
+      });
+    });
+  }, [playlistId]);
 
   return (
     <div className="App">

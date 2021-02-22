@@ -3,6 +3,13 @@
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid gray;
+  transition: all 0.3s ease-in;
+
+  &:not(:first-child):hover {
+    cursor: pointer;
+    transform: scaleY(1.02);
+    color: rgba($color: #fff, $alpha: 0.5);
+  }
 
   .track__left {
     display: flex;

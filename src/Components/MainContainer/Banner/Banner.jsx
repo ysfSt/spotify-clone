@@ -4,8 +4,9 @@ import {useStateValue} from '../../../StateProvider';
 
 const Banner = () => {
 
-    const [{playlists},dispath] = useStateValue();
-    console.log(playlists);
+    const [{playlists, playlistId},dispath] = useStateValue();
+    const playlistIndex = playlists.findIndex((item)=> item.id === playlistId);
+    const playlistClicked = playlists[playlistIndex];
 
 
   return (
@@ -15,13 +16,13 @@ const Banner = () => {
         alt=""
       /> */}
       <img className='banner__albumcover'
-        src={playlists.length > 0? playlists[2]?.images[0]?.url : ''}
+        src={playlistClicked && playlistClicked?.images[0]?.url}
         alt=""
       />
 
       <div className="banner__info">
-        <h2>{playlists.length > 0? playlists[2]?.name : 'PLAYLIST'}</h2>
-        <p>{playlists.length > 0? playlists[2]?.description : 'descrption ...'}</p>
+        <h2>{playlistClicked && playlistClicked?.name}</h2>
+        <p>{playlistClicked && playlistClicked?.description}</p>
       </div>
     </div>
   );

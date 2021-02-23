@@ -2,6 +2,7 @@ export const initialState = {
   user: null,
   playlists: [],
   playlistId: null,
+  trackId: null,
   playing: false,
   items: null,
   tracks: [],
@@ -41,6 +42,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlistId: action.playlistId,
+      };
+      break;
+    case "SET_TRACK_ID":
+      return {
+        ...state,
+        trackId: action.trackId,
       };
       break;
     default:

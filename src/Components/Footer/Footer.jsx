@@ -15,8 +15,8 @@ import {useStateValue} from '../../StateProvider';
 const Footer = () => {
 
 const [{playlists, playlistId},dispatch] = useStateValue();
-const playlistIndex = playlists.findIndex((item)=> item.id === playlistId);
-const playlistClicked = playlists[playlistIndex];
+// const playlistIndex = playlists.findIndex((item)=> item.id === playlistId);
+// const playlistClicked = playlists[playlistIndex];
 
 
   return <div className="footer">

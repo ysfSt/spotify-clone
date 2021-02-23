@@ -8,7 +8,7 @@ import Track from './Track/Track';
 
 const TracksBanner = () => {
 
-    const [{tracks}, dispatch] = useStateValue();
+    const [{tracks, playlistId}, dispatch] = useStateValue();
 
     const updatedTracks = tracks?.map(trackData => {
         console.log(trackData.track);
@@ -26,8 +26,13 @@ const TracksBanner = () => {
     console.log(updatedTracks);
     return (
         <div className='tracksBanner'>
-            <Track number='#' title='Title' albumTitle="Album" />
-            {updatedTracks?.map((track) => <Track key = {track.id} number={updatedTracks.indexOf(track) + 1} title={track.title} duration={track.duration} albumTitle={track.albumTitle} albumImageUrl={track.albumImageUrl} previewUrl={track.previewUrl}/>)}
+            {playlistId ?
+            (<>
+                <Track number='#' title='Title' albumTitle="Album" />
+                {updatedTracks?.map((track) => <Track  key = {track.id} id={track.id} number={updatedTracks.indexOf(track) + 1} title={track.title} duration={track.duration} albumTitle={track.albumTitle} albumImageUrl={track.albumImageUrl} previewUrl={track.previewUrl}/>)}
+            </>) : (<h1>Choose a Playlist</h1>)
+            }
+
         </div>
     )
 }

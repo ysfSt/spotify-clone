@@ -2,12 +2,23 @@ import React from 'react'
 import './Track.scss'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import numeral from 'numeral'
-import moment from 'moment'
+import { useStateValue } from '../../../../StateProvider';
 
-const Track = ({number, title,albumTitle, duration}) => {
+const Track = ({number, title,albumTitle, duration, id}) => {
+
+
+    const [{trackId},dispatch] = useStateValue();
+    console.log(trackId);
+    const setTrackId = (id) => {
+        dispatch({
+          type : 'SET_TRACK_ID',
+          trackId : id
+        })
+    }
+
 
     return (
-        <div className='track'>
+        <div className='track' onClick={() => {setTrackId(id)}}>
             <div className="track__left">
                 <div>{number}</div>
                 <div>{title}</div>
